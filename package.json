@@ -1,0 +1,58 @@
+{
+  "name": "action-items",
+  "version": "1.0.0",
+  "description": "App para ajudar na gestão de Action Items de Sprints",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test:verbose": "jest --passWithNoTests --runInBand",
+    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test:ci": "npm test -- --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulianoPadilha/action-items.git"
+  },
+  "keywords": [
+    "sprint",
+    "kanban",
+    "scrum",
+    "action",
+    "items",
+    "development",
+    "agile"
+  ],
+  "author": "Juliano Padilha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JulianoPadilha/action-items/issues"
+  },
+  "homepage": "https://github.com/JulianoPadilha/action-items#readme",
+  "dependencies": {
+    "config": "^3.3.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.14"
+  },
+  "devDependencies": {
+    "@types/config": "0.0.38",
+    "@types/cors": "^2.8.9",
+    "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.22",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "eslint": "^7.19.0",
+    "eslint-config-standard-with-typescript": "^20.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "git-commit-msg-linter": "^3.0.0",
+    "husky": "^4.3.8",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "ts-jest": "^26.5.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
