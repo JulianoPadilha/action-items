@@ -4,6 +4,7 @@
   "description": "App para ajudar na gestão de Action Items de Sprints",
   "main": "index.js",
   "scripts": {
+    "start:dev": "nodemon",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
@@ -29,6 +30,7 @@
   },
   "homepage": "https://github.com/JulianoPadilha/action-items#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "config": "^3.3.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
