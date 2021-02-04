@@ -2,8 +2,10 @@
   "compilerOptions": {
     "outDir": "dist",
     "module": "commonjs",
-    "target": "es2019",
+    "target": "es5",
     "esModuleInterop": true,
-    "allowJs": true
+    "allowJs": true,
+    "lib": ["es6", "DOM"],
+    "jsx": "react",
   }
 }
