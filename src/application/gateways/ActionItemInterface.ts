@@ -12,6 +12,37 @@ class ActionItemInterface implements ActionItemGateway {
     const actionItem: any = new ActionItemModel(data);
     return await actionItem.save();
   }
+
+  async getAllActionItems(): Promise<ActionItem> {
+    const result: any = await ActionItemModel.find({});
+    return result;
+  }
+
+  async getActionItemById(itemId: string): Promise<ActionItem> {
+    const result: any = await ActionItemModel.findById(itemId);
+    return result;
+  }
+
+  async searchActionItemsByTitleContent(data: string): Promise<ActionItem> {
+    const result: any = await ActionItemModel.find({ title: { $regex: new RegExp(data, 'i') } }).exec();
+    return result;
+  }
+
+  async updateActionItem(itemId: string, data: ActionItem): Promise<ActionItem> {
+    const options: any = {
+      useFindAndModify: false
+    }
+    const actionItem: any = await ActionItemModel.findByIdAndUpdate(itemId, data, options);
+    return actionItem;
+  }
+
+  async removeActionItemById(itemId: string): Promise<ActionItem> {
+    const options: any = {
+      useFindAndModify: false
+    }
+    const result: any = await ActionItemModel.findByIdAndRemove(itemId, options);
+    return result;
+  }
 }
 
 export default new ActionItemInterface();
