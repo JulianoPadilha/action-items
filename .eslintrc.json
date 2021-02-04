@@ -4,7 +4,7 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "@typescript-eslint/semi": "off",
+    "@typescript-eslint/semi": "on",
     "@typescript-eslint/space-before-function-paren": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/method-signature-style": "off",
