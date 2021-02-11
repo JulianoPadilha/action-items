@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://julianopadilha:BsbLXJzH77nBUAf@cluster0.8orjh.mongodb.net/Cluster0?retryWrites=true&w=majority",
+  "baseURL": "https://siaccounts-actionitems.herokuapp.com/"
+}
