@@ -2,5 +2,5 @@
   "watch": ["src"],
   "ext": ".ts,.js",
   "ignore": [],
-  "exec": "ts-node ./src/application/server/apiRouter.ts"
+  "exec": "ts-node ./src/application/server/index.ts"
 }
