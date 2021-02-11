@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   entry: './src/application/entrypoints/app/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'app.bundle.js'
   },
   resolve: {
@@ -19,11 +19,25 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.css$/i,
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader',
-          'postcss-loader'
+          {
+            loader: 'css-loader', options: { 
+              esModule: true,
+              importLoaders: 1,
+              sourceMap: true
+             }
+          },
+          'postcss-loader',
         ],
         exclude: /node_modules/
       }
@@ -31,7 +45,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'public/index.html'
+      template: 'public/index.html',
+      favicon: 'public/favicon.ico'
     })
   ],
   devServer: {
@@ -40,7 +55,9 @@ module.exports = {
     stats: 'errors-only',
     open: false,
     historyApiFallback: true,
-    contentBase: './dist'
+    contentBase: path.resolve(__dirname, 'build'),
+    watchContentBase: true,
+    hot: true,
   },
   devtool: false
 };
