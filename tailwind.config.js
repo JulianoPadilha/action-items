@@ -1,14 +1,12 @@
 module.exports = {
-  purge: {
-    enabled: true,
-    content: [
-      './public/**/*.html',
-      './src/**/*.{ts,tsx}'
-    ]
-  },
+  purge: [],
   darkMode: false,
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        'row-9': '250px 155px 155px 155px 155px 155px 155px 115px 115px'
+      }
+    },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif']
