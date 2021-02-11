@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities; 
+
+.priority-high {
+  color: rgb(239, 68, 68);
+}
+
+.priority-medium {
+  color: rgb(245, 158, 11);
+}
+
+.priority-low {
+  color: rgb(16, 185, 129);
+}
+
+.priority-shadown {
+  box-shadow: 0px -3px 4px 1px #e4e4e4;
+}
