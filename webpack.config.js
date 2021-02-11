@@ -1,8 +1,10 @@
+const TerserPlugin = require("terser-webpack-plugin");
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  target: 'node',
   entry: './src/application/entrypoints/app/index.tsx',
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -16,7 +18,7 @@ module.exports = {
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'ts-loader'
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
@@ -25,6 +27,7 @@ module.exports = {
             loader: 'file-loader',
           },
         ],
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -49,6 +52,10 @@ module.exports = {
       favicon: 'public/favicon.ico'
     })
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
   devServer: {
     compress: true,
     port: 8081,
