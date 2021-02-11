@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  target: 'node',
   entry: './src/application/entrypoints/app/index.tsx',
   output: {
     path: path.resolve(__dirname, 'build'),

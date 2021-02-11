@@ -3,7 +3,7 @@ import makeFetch from '../utils/makeFetch';
 
 const getAllActionItems = async () => {
   const fetch = new makeFetch();
-  const response = await fetch.get('http://localhost:8000/action-item/');
+  const response = await fetch.get('http://localhost:8000/api/action-item/');
   return response;
 }
 

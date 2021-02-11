@@ -18,6 +18,6 @@ router.listen(process.env.PORT || PORT, () => console.log(`Server is listening o
 
 router.use(cors());
 router.use((bodyParser.json()));
-router.use('/action-item', actionItemRouter);
+router.use('/api/action-item', actionItemRouter);
 
 export default router;
