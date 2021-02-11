@@ -2,15 +2,20 @@
 import { ActionItem } from '../ActionItem';
 import { TypeEnum } from '../enums/ActionItemType'
 import { StatusEnum } from '../enums/ActionItemStatus'
+import { OwnerEnum } from '../enums/ActionItemOwner'
+import { PriorityEnum } from '../enums/ActionItemPriority'
 
 const actionItemTypeMock: ActionItem = {
   title: 'Title',
   description: 'Description',
-  sprintDate: new Date("2021-02-04 12:00:00 GMT-0"),
-  sprintName: 'Sprint name',
+  creationDate: new Date("2021-02-04 12:00:00 GMT-0"),
+  sprint: 'Sprint name',
   status: StatusEnum.DONE,
   type: TypeEnum.EXECUTABLE,
-  owner: 'Joe Doe',
+  owner: OwnerEnum.JUJU,
+  priority: PriorityEnum.HIGH,
+  assignmentDay: new Date("2021-02-04 12:00:00 GMT-0"),
+  endDay: new Date("2021-02-10 12:00:00 GMT-0")
 }
 
 describe('ActionItem Entity', () => {
@@ -24,11 +29,14 @@ describe('ActionItem Entity', () => {
     //@ts-ignore
     const actionItemTypeMockFail: ActionItem = {
       description: 'Description',
-      sprintDate: new Date("2021-02-04 12:00:00 GMT-0"),
-      sprintName: 'Sprint name',
+      creationDate: new Date("2021-02-04 12:00:00 GMT-0"),
+      sprint: 'Sprint name',
       status: StatusEnum.DONE,
       type: TypeEnum.EXECUTABLE,
-      owner: 'Joe Doe',
+      owner: OwnerEnum.JUJU,
+      priority: PriorityEnum.HIGH,
+      assignmentDay: new Date("2021-02-04 12:00:00 GMT-0"),
+      endDay: new Date("2021-02-10 12:00:00 GMT-0")
     };
 
     Object.keys(actionItemTypeMockFail).forEach(() => {
