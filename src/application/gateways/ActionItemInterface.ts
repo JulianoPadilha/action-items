@@ -23,8 +23,8 @@ class ActionItemInterface implements ActionItemGateway {
     return result;
   }
 
-  async searchActionItemsByTitleContent(data: string): Promise<ActionItem> {
-    const result: any = await ActionItemModel.find({ title: { $regex: new RegExp(data, 'i') } }).exec();
+  async searchActionItemsByTitleContent(data: any): Promise<ActionItem> {
+    const result: any = await ActionItemModel.find(JSON.parse(data)).exec();
     return result;
   }
 
