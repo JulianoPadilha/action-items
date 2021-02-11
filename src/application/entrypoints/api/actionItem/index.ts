@@ -5,11 +5,13 @@ import express, { IRouter } from 'express';
 import ActionItemController from './controller';
 
 const router: IRouter = express.Router();
+const otherRouterr: IRouter = express.Router();
 
+router.get('/', ActionItemController.getAllActionItems);
+router.get('/filter', ActionItemController.searchActionItemsByTitleContent);
+router.get('/:itemId', ActionItemController.getActionItemById);
 router.post('/', ActionItemController.createActionItem);
 router.put('/:itemId', ActionItemController.updateActionItem);
-router.get('/', ActionItemController.getAllActionItems);
-router.get('/:itemId', ActionItemController.getActionItemById);
 router.delete('/:itemId', ActionItemController.removeActionItemById);
 
 export default router;
