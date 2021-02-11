@@ -1,5 +1,5 @@
 export enum TypeEnum {
-  executable = 'Executável',
-  goodPractice = 'Boa Prática',
-  other = 'Outro'
+  EXECUTABLE = 'Executável',
+  GOOD_PRACTICE = 'Boa Prática',
+  OTHER = 'Outro'
 }
