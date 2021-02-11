@@ -1,14 +1,19 @@
 /* Enums */
 import { StatusEnum } from './enums/ActionItemStatus';
 import { TypeEnum } from './enums/ActionItemType';
+import { OwnerEnum } from './enums/ActionItemOwner';
+import { PriorityEnum } from './enums/ActionItemPriority';
 
 /* Interface */
 export interface ActionItem {
   title: string
   description: string
-  sprintDate: Date
-  sprintName: string
+  creationDate: Date
+  sprint: string
   status: StatusEnum
   type: TypeEnum
-  owner: string
+  owner: OwnerEnum
+  priority: PriorityEnum,
+  assignmentDay: Date,
+  endDay: Date
 };
