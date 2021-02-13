@@ -1,9 +1,12 @@
 /* Utils */
 import makeFetch from '../utils/makeFetch';
 
+/* Config */
+import baseURL from '../../../../../config';
+
 const getAllActionItems = async () => {
   const fetch = new makeFetch();
-  const response = await fetch.get('http://localhost:8000/api/action-item/');
+  const response = await fetch.get(`${baseURL}/action-item/`);
   return response;
 }
 
