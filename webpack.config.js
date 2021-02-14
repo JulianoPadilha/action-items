@@ -1,4 +1,6 @@
+const webpack = require('webpack');
 const TerserPlugin = require("terser-webpack-plugin");
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -46,10 +48,12 @@ module.exports = {
     ]
   },
   plugins: [
+    // new BundleAnalyzerPlugin(),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       favicon: 'public/favicon.ico'
-    })
+    }),
+    new webpack.optimize.ModuleConcatenationPlugin()
   ],
   optimization: {
     minimize: true,
