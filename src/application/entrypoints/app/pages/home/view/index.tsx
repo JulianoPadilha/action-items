@@ -1,11 +1,11 @@
 /* Dependencies */
 import React, { useCallback, useEffect, useState } from 'react';
 
-/* Entities */
-import { StatusEnum } from '../../../../../../domain/entities/enums/ActionItemStatus';
-import { OwnerEnum } from '../../../../../../domain/entities/enums/ActionItemOwner';
-import { TypeEnum } from '../../../../../../domain/entities/enums/ActionItemType';
-import { PriorityEnum } from '../../../../../../domain/entities/enums/ActionItemPriority';
+/* Utils */
+import { statusList } from '../../../utils/statusList';
+import { ownerList } from '../../../utils/ownerList';
+import { typeList } from '../../../utils/typeList';
+import { priorityList } from '../../../utils/priorityList';
 
 /* Services */
 import getAllActionItems from '../../../services/getAllActionItems';
@@ -27,7 +27,7 @@ import Close from '../../../components/Icons/Close';
 const Home = () => {
   const [preFetchedData, setPreFetchData] = useState({});
   const [isLoading, setLoading] = useState(true);
-  const [actionItemData, setActionItemData] = useState({});
+  const [actionItemData, setActionItemData] = useState<any>({});
   const [isFilterOpen, setOpenFilter] = useState(false);
   const [filterFields, setFilterFields] = useState({});
   const [isModalDetailOpen, setModalDetailOpen] = useState(false);
@@ -156,16 +156,16 @@ const Home = () => {
         </div>
         <form className="p-5" onChange={onFieldChange}>
           <div className="mb-5">
-            <Select required={false} label="Status" id="status" size="full" items={StatusEnum} />
+            <Select required={false} label="Status" id="status" size="full" items={statusList} />
           </div>
           <div className="mb-5">
-            <Select required={false} label="Prioridade" id="priority" size="full" items={PriorityEnum} />
+            <Select required={false} label="Prioridade" id="priority" size="full" items={priorityList} />
           </div>
           <div className="mb-5">
-            <Select required={false} label="Tipo" id="type" size="full" items={TypeEnum} />
+            <Select required={false} label="Tipo" id="type" size="full" items={typeList} />
           </div>
           <div className="mb-5">
-            <Select required={false} label="Responsável" id="owner" size="full" items={OwnerEnum} />
+            <Select required={false} label="Responsável" id="owner" size="full" items={ownerList} />
           </div>
           
           <div>

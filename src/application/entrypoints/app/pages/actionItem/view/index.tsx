@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-/* Entities */
-import { StatusEnum } from '../../../../../../domain/entities/enums/ActionItemStatus';
-import { OwnerEnum } from '../../../../../../domain/entities/enums/ActionItemOwner';
-import { TypeEnum } from '../../../../../../domain/entities/enums/ActionItemType';
-import { PriorityEnum } from '../../../../../../domain/entities/enums/ActionItemPriority';
+/* Utils */
+import { statusList } from '../../../utils/statusList';
+import { ownerList } from '../../../utils/ownerList';
+import { typeList } from '../../../utils/typeList';
+import { priorityList } from '../../../utils/priorityList';
 
 /* Components */
 import Button from '../../../components/Button/Button';
@@ -77,14 +77,14 @@ const ActionItemDetail: any = (): any => {
         </div>
 
         <div className="mb-6 flex justify-between">
-          <Select required label="Status" id="status" size="other" value={fields.status} items={StatusEnum} />
-          <Select required label="Prioridade" id="priority" size="other" value={fields.priority} items={PriorityEnum} />
+          <Select required label="Status" id="status" size="other" value={fields.status} items={statusList} />
+          <Select required label="Prioridade" id="priority" size="other" value={fields.priority} items={priorityList} />
         </div>
 
         <div className="mb-6 flex justify-between">
-          <Select required label="Tipo" id="type" size="other" value={fields.type} items={TypeEnum} />
-          {fields && fields.type !== TypeEnum.GOOD_PRACTICE && (
-            <Select required label="Responsável" id="owner" size="other" value={fields.owner} items={OwnerEnum} />
+          <Select required label="Tipo" id="type" size="other" value={fields.type} items={typeList} />
+          {fields && fields.type !== 'Boa Prática' && (
+            <Select required label="Responsável" id="owner" size="other" value={fields.owner} items={ownerList} />
           )}
         </div>
         

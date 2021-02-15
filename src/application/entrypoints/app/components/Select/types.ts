@@ -1,8 +1,8 @@
 export interface SelectTypes {
-  items: any;
+  items: string[];
   label: string;
   id: string;
   size: string;
-  required: boolean;
+  required?: boolean;
   value?: string
 }

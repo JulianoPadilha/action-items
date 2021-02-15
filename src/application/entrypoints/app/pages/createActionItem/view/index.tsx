@@ -4,12 +4,11 @@ import React, { useState } from 'react';
 /* Services */
 import createActionItem from '../../../services/createActionItem';
 
-/* Enums */
-import { ActionItem } from '../../../../../../domain/entities/ActionItem'
-import { StatusEnum } from '../../../../../../domain/entities/enums/ActionItemStatus';
-import { OwnerEnum } from '../../../../../../domain/entities/enums/ActionItemOwner';
-import { TypeEnum } from '../../../../../../domain/entities/enums/ActionItemType';
-import { PriorityEnum } from '../../../../../../domain/entities/enums/ActionItemPriority';
+/* Utils */
+import { statusList } from '../../../utils/statusList';
+import { ownerList } from '../../../utils/ownerList';
+import { typeList } from '../../../utils/typeList';
+import { priorityList } from '../../../utils/priorityList';
 
 /* Components */
 import Button from '../../../components/Button/Button';
@@ -67,14 +66,14 @@ const CreateActionItem = () => {
         </div>
 
         <div className="mb-6 flex justify-between">
-          <Select required label="Status" id="status" size="other" items={StatusEnum} />
-          <Select required label="Prioridade" id="priority" size="other" items={PriorityEnum} />
+          <Select required label="Status" id="status" size="other" items={statusList} />
+          <Select required label="Prioridade" id="priority" size="other" items={priorityList} />
         </div>
 
         <div className="mb-6 flex justify-between">
-          <Select required label="Tipo" id="type" size="other" items={TypeEnum} />
-          {fields && fields.type !== TypeEnum.GOOD_PRACTICE && (
-            <Select required label="Responsável" id="owner" size="other" items={OwnerEnum} />
+          <Select required label="Tipo" id="type" size="other" items={typeList} />
+          {fields && fields.type !== 'Boa Prática' && (
+            <Select required label="Responsável" id="owner" size="other" items={ownerList} />
           )}
         </div>
         
