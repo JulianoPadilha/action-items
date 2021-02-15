@@ -1,11 +1,14 @@
 module.exports = {
   purge: {
     mode: 'all',
-    enabled: process.env.NODE_ENV === 'production',
+    enabled: true,
     content: [
       './src/**/*.html',
       './src/**/*.tsx',
-    ]
+    ],
+    options: {
+      safelist: ['priority-high', 'priority-medium', 'priority-low', 'priority-shadow']
+    }
   },
   darkMode: false,
   theme: {
