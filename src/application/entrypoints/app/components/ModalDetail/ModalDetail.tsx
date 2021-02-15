@@ -26,9 +26,10 @@ const ModalDetail: any = ({ item, closeModalDetail, closeModalDetailClickOutside
                   Descrição
                 </h3>
                 <div className="mt-2">
-                  <p className="text-base text-gray-500">
-                    { item.description }
-                  </p>
+                  <div className="text-base text-gray-500 whitespace-pre-line break-word modal-detail" dangerouslySetInnerHTML={{
+    __html: item.description }}>
+                    {/* { item.description } */}
+                  </div>
                 </div>
               </div>
             </div>

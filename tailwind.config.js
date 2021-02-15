@@ -1,7 +1,7 @@
 module.exports = {
   purge: {
     mode: 'all',
-    enabled: true,
+    enabled: process.env.NODE_ENV === 'production',
     content: [
       './src/**/*.html',
       './src/**/*.tsx',
@@ -15,6 +15,9 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         'row-9': '250px 155px 155px 155px 155px 155px 155px 115px 115px'
+      },
+      wordBreak: {
+        'break-word': 'break-word'
       }
     },
     fontFamily: {
