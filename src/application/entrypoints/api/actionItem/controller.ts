@@ -22,7 +22,7 @@ class ActionItemController {
     }
   }
 
-  async getAllActionItems(req: any, res: any): Promise<ActionItem> {
+  async getAllActionItems(_req: any, res: any): Promise<ActionItem> {
     try {
       const result = await getAllActionItems(ActionItemInterface);
       return res.json(result);

@@ -1,6 +1,9 @@
 /* Dependencies */
 import React, { useCallback, useEffect, useState } from 'react';
 
+/* Types */
+import { ActionItem } from '../../../types/ActionItem';
+
 /* Utils */
 import { statusList } from '../../../utils/statusList';
 import { ownerList } from '../../../utils/ownerList';

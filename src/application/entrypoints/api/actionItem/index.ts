@@ -5,7 +5,6 @@ import express, { IRouter } from 'express';
 import ActionItemController from './controller';
 
 const router: IRouter = express.Router();
-const otherRouterr: IRouter = express.Router();
 
 router.get('/', ActionItemController.getAllActionItems);
 router.get('/filter', ActionItemController.searchActionItemsByTitleContent);

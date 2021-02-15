@@ -1,5 +1,5 @@
 /* Entities */
-import { ActionItem } from '../../../../domain/entities/ActionItem';
+import { ActionItem } from '../types/ActionItem';
 
 class makeFetch {
   async get(url: string): Promise<ActionItem> {
