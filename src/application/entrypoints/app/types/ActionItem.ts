@@ -6,6 +6,7 @@ import { PriorityEnum } from './enums/ActionItemPriority';
 
 /* Interface */
 export interface ActionItem {
+  _id: string;
   title: string
   description: string
   creationDate: Date

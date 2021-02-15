@@ -9,7 +9,6 @@ const actionItemTypeMock: ActionItem = {
   title: 'Title',
   description: 'Description',
   creationDate: new Date("2021-02-04 12:00:00 GMT-0"),
-  sprint: 'Sprint name',
   status: StatusEnum.DONE,
   type: TypeEnum.EXECUTABLE,
   owner: OwnerEnum.JUJU,
@@ -30,7 +29,6 @@ describe('ActionItem Entity', () => {
     const actionItemTypeMockFail: ActionItem = {
       description: 'Description',
       creationDate: new Date("2021-02-04 12:00:00 GMT-0"),
-      sprint: 'Sprint name',
       status: StatusEnum.DONE,
       type: TypeEnum.EXECUTABLE,
       owner: OwnerEnum.JUJU,

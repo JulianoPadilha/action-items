@@ -1,17 +1,19 @@
 /* Dependencies */
-import React, { useRef } from 'react';
+import React, { useRef, FunctionComponent } from 'react';
+
+/* Types */
+import { ModalDeleteProps } from './types';
 
 /* Icons */
 import WarningIcon from '../Icons/Warning';
 
-const ModalDelete: any = (
-  { 
-    closeModalDetail, 
-    closeModalDetailClickOutside,
-    deleteActionItem,
-    item
-  }: any
-): any => {
+const ModalDelete: FunctionComponent<ModalDeleteProps> = ({ 
+  closeModalDetail, 
+  closeModalDetailClickOutside,
+  deleteActionItem,
+  item
+  }
+) => {
   const ref = useRef();
   
   return (
