@@ -36,8 +36,8 @@ const Row: FunctionComponent<RowTypes> = ({
             <li className={`mx-auto priority-${item.priority.toLocaleLowerCase()}`}>
                <ArrowDownIcon className={`transform ${ArrowRotation[item.priority]}`} />
             </li>
-            <li>{ formatDate(item.assignmentDay) }</li>
-            <li>{ formatDate(item.endDay) }</li>
+            <li>{ item.assignmentDay ? formatDate(item.assignmentDay) : '----' }</li>
+            <li>{ item.endDay ? formatDate(item.endDay) : '----' }</li>
             <li><Status status={item.status} /></li>
             <li>{ item.type }</li>
             <li>{ item.owner || '----' }</li>

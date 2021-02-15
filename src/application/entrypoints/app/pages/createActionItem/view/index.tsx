@@ -56,7 +56,7 @@ const CreateActionItem = () => {
           {/* Data de início */}
           <div>
             <label htmlFor="assignmentDay" className="block text-base text-gray-500">Data de Início</label>
-            <input required id="assignmentDay" type="date" className="border-gray-300 border w-96 rounded-md p-2" />
+            <input id="assignmentDay" type="date" className="border-gray-300 border w-96 rounded-md p-2" />
           </div>
 
           {/* Data de conclusão */}
