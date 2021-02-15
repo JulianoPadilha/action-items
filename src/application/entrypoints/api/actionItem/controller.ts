@@ -5,7 +5,7 @@ import { ActionItem } from '../../../../domain/entities/ActionItem';
 import createActionItem from '../../../../domain/usecases/createActionItem';
 import getAllActionItems from '../../../../domain/usecases/getAllActionItems';
 import getActionItemById from '../../../../domain/usecases/getActionItemById';
-import searchActionItemsByTitleContent from '../../../../domain/usecases/searchActionItemsByTitleContent';
+import filterActionItemByData from '../../../../domain/usecases/filterActionItemByData';
 import updateActionItem from '../../../../domain/usecases/updateActionItem';
 import removeActionItemById from '../../../../domain/usecases/removeActionItemById';
 
@@ -43,12 +43,12 @@ class ActionItemController {
     }
   }
 
-  async searchActionItemsByTitleContent(req: any, res: any): Promise<ActionItem> {
+  async filterActionItemByData(req: any, res: any): Promise<ActionItem> {
     const {
       search
     } = req.query;
     try {
-      const result = await searchActionItemsByTitleContent(ActionItemInterface, search);
+      const result = await filterActionItemByData(ActionItemInterface, search);
       return res.json(result);
     } catch (err) {
       console.log('searchActionItemsByTitleContent -> err', err);

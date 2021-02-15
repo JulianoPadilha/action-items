@@ -5,7 +5,6 @@ const actionItemSchema = new mongoose.Schema({
   title: String,
   description: String,
   creationDate: String,
-  sprint: String,
   status: String,
   type: String,
   owner: String,

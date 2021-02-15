@@ -6,6 +6,6 @@ export default abstract class ActionItemGateway {
   abstract getAllActionItems(): Promise<ActionItem>;
   abstract getActionItemById(itemId: string): Promise<ActionItem>;
   abstract updateActionItem(itemId: string, data: ActionItem): Promise<ActionItem>;
-  abstract searchActionItemsByTitleContent(data: string): Promise<ActionItem>;
+  abstract filterActionItemByData(data: any): Promise<ActionItem>;
   abstract removeActionItemById(itemId: string): Promise<ActionItem>;
 }
