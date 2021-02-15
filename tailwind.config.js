@@ -16,9 +16,6 @@ module.exports = {
       gridTemplateColumns: {
         'row-9': '250px 155px 155px 155px 155px 155px 155px 115px 115px'
       },
-      wordBreak: {
-        'break-word': 'break-word'
-      }
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
