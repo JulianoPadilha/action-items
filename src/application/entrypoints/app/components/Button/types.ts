@@ -3,7 +3,7 @@ export interface ButtonProps {
   type: 'button' | 'reset' | 'submit'; 
   modifier: string; 
   size: string; 
-  onClick?: any;
+  onClick?: () => void;
   href?: string, 
   className?: string;
 }
