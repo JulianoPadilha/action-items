@@ -1,7 +1,11 @@
-import React from 'react';
+/* Dependencies */
+import React, { FunctionComponent } from 'react';
 
-const Status: any = ({status}: any) => {
-  const statusBgColor: any = {
+/* Types */
+import { StatusProps } from './types';
+
+const Status: FunctionComponent<StatusProps> = ({ status }) => {
+  const statusBgColor: { [key: string]: string } = {
     TODO: 'bg-gray-300',
     WIP: 'bg-yellow-300',
     DONE: 'bg-green-300',

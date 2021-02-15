@@ -2,21 +2,25 @@
 import React, { FunctionComponent } from 'react';
 
 /* Types */
-import { RowTypes, ArrowRotation } from './types';
+import { RowTypes } from './types';
 
-/* Components */
+/* Row Components */
+import AssignmentDay from './AssignmentDay/AssignmentDay';
+import Delete from './Delete/Delete';
+import Edit from './Edit/Edit';
+import EndDay from './EndDay/EndDay';
 import Header from './Header/Header';
 import Status from './Status/Status';
+import Owner from './Owner/Owner';
+import Priority from './Priority/Priority';
+import Title from './Title/Title';
+import Type from './Type/Type';
+
+/* Components */
 import ContentNotFound from '../ContentNotFound/ContentNotFound';
 
 /* Icons */
-import ArrowDownIcon from '../Icons/ArrowDown';
-import EditIcon from '../Icons/Edit';
-import DeleteIcon from '../Icons/Delete';
 import Spinner from '../Icons/Spinner';
-
-/* Utils */
-import { formatDate } from '../../utils/formatDate';
 
 const Row: FunctionComponent<RowTypes> = ({
   items,
@@ -30,22 +34,32 @@ const Row: FunctionComponent<RowTypes> = ({
       {!isLoading && items.length ? items.map(item => (
         <div key={item._id} className="flex w-full m-4">
           <ul className="grid grid-cols-row-9 w-full py-3 text-center items-center text-base text-gray-500">
-            <li onClick={() => openModalDetail(item._id)} className="cursor-pointer">
-              { item.title }
+            <li>
+              <Title openModalDetail={() => openModalDetail(item._id)} title={item.title} />
             </li>
             <li className={`mx-auto priority-${item.priority.toLocaleLowerCase()}`}>
-               <ArrowDownIcon className={`transform ${ArrowRotation[item.priority]}`} />
+              <Priority priority={item.priority} />
             </li>
-            <li>{ item.assignmentDay ? formatDate(item.assignmentDay) : '----' }</li>
-            <li>{ item.endDay ? formatDate(item.endDay) : '----' }</li>
-            <li><Status status={item.status} /></li>
-            <li>{ item.type }</li>
-            <li>{ item.owner || '----' }</li>
+            <li>
+              <AssignmentDay assignmentDay={item.assignmentDay} />
+            </li>
+            <li>
+              <EndDay endDay={item.endDay} />
+            </li>
+            <li>
+              <Status status={item.status} />
+            </li>
+            <li>
+              <Type type={item.type} />
+            </li>
+            <li>
+              <Owner owner={item.owner} />
+            </li>
             <li className="mx-auto text-green-700 gap-10">
-              <a href={item._id} title="Editar"><EditIcon /></a>
+              <Edit itemId={item._id} />
             </li>
             <li className="mx-auto cursor-pointer text-red-500">
-              <button title="Excluir" onClick={() => openModalDeleteActionItem(item)}><DeleteIcon /></button>
+              <Delete openModalDeleteActionItem={() => openModalDeleteActionItem(item)} />
             </li>
           </ul>
         </div>

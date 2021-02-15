@@ -1,6 +1,5 @@
-/* Types */
-export type PriorityTypes = {
-  priority: string
+export interface PriorityTypes {
+  priority: string;
 }
 
 
