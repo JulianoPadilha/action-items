@@ -1,10 +1,17 @@
 /* Dependencies */
-import React, { useRef } from 'react';
+import React, { useRef, FunctionComponent } from 'react';
+
+/* Types */
+import { ModalDetailProps } from './types';
 
 /* Icons */
 import DetailIcon from '../Icons/Detail';
 
-const ModalDetail: any = ({ item, closeModalDetail, closeModalDetailClickOutside }: any): any => {
+const ModalDetail: FunctionComponent<ModalDetailProps> = ({ 
+  item, 
+  closeModalDetail, 
+  closeModalDetailClickOutside 
+}) => {
   const ref = useRef();
   
   return (
@@ -26,9 +33,7 @@ const ModalDetail: any = ({ item, closeModalDetail, closeModalDetailClickOutside
                   Descrição
                 </h3>
                 <div className="mt-2">
-                  <div className="text-base text-gray-500 whitespace-pre-line break-word modal-detail" dangerouslySetInnerHTML={{
-    __html: item.description }}>
-                    {/* { item.description } */}
+                  <div className="text-base text-gray-500 whitespace-pre-line break-word modal-detail" dangerouslySetInnerHTML={{ __html: item.description }}>
                   </div>
                 </div>
               </div>
