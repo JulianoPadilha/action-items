@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
   console.log('process.env.NODE_ENV', process.env.NODE_ENV);
   router.use(express.static(path.resolve('./build')));
   
-  router.get('/', (req: any, res: any) => {
+  router.get('*', (req: any, res: any) => {
     res.sendFile(path.resolve('./build', 'index.html'));
   });
 }
