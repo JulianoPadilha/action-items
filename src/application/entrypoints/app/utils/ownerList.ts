@@ -10,5 +10,6 @@ export const ownerList: string[] = [
   'Leo',
   'Lucas',
   'Mel',
-  'Outro'
+  'Outro',
+  'Ninguém'
 ];
