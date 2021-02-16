@@ -1,5 +1,6 @@
 /* Entities */
 import { ActionItem } from '../../../../domain/entities/ActionItem';
+import { Metrics } from '../../../../domain/entities/Metrics';
 
 /* Usecase */
 import createActionItem from '../../../../domain/usecases/createActionItem';
@@ -8,9 +9,11 @@ import getActionItemById from '../../../../domain/usecases/getActionItemById';
 import filterActionItemByData from '../../../../domain/usecases/filterActionItemByData';
 import updateActionItem from '../../../../domain/usecases/updateActionItem';
 import removeActionItemById from '../../../../domain/usecases/removeActionItemById';
+import getConsolidatedMetrics from '../../../../domain/usecases/getConsolidatedMetrics';
 
 /* Gateway Interface */
 import ActionItemInterface from '../../../gateways/ActionItemInterface';
+import MetricsInterface from '../../../gateways/MetricsInterface';
 
 class ActionItemController {
   async createActionItem(req: any, res: any): Promise<ActionItem> {
@@ -77,6 +80,15 @@ class ActionItemController {
       return res.json(result);
     } catch (err) {
       console.log('removeActionItemById -> err', err);
+    }
+  }
+
+  async getConsolidatedMetrics(req: any, res: any): Promise<Metrics> {
+    try {
+      const result = await getConsolidatedMetrics(MetricsInterface);
+      return res.json(result);
+    } catch (err) {
+      console.log('getConsolidatedMetrics -> err', err);
     }
   }
 }
