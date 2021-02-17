@@ -33,7 +33,7 @@ const Row: FunctionComponent<RowTypes> = ({
       <Header />
       {!isLoading && items.length ? items.map(item => (
         <div key={item._id} className="flex w-full m-4">
-          <ul className="grid grid-cols-row-9 w-full py-3 text-center items-center text-base text-gray-500">
+          <ul className="grid grid-cols-9 w-full py-3 text-center items-center text-base text-gray-500">
             <li>
               <Title openModalDetail={() => openModalDetail(item._id)} title={item.title} />
             </li>
