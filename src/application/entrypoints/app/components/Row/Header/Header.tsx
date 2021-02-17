@@ -8,7 +8,7 @@ const Header = () => {
         <li>Action Item</li>
         <li className="py-3 bg-white priority-shadown">Prioridade</li>
         <li>Data Início</li>
-        <li>Data Fim</li>
+        <li>Data Conclusão</li>
         <li>Status</li>
         <li>Tipo</li>
         <li>Responsável</li>
