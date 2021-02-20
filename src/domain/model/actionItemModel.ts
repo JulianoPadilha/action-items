@@ -7,7 +7,7 @@ const actionItemSchema = new mongoose.Schema({
   creationDate: String,
   status: String,
   type: String,
-  owner: String,
+  owner: Array,
   priority: String,
   assignmentDay: String,
   endDay: String
