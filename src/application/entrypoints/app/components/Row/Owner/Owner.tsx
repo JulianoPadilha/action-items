@@ -7,7 +7,7 @@ import { OwnerProps } from './types'
 const Owner: FunctionComponent<OwnerProps> = ({ owner }) => {
   return (
     <span>
-      { owner || '----' }
+      { owner.length ? owner.map(i => <p key={i}>{ i }</p>) : '----' }
     </span>
   )
 }

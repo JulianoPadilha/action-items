@@ -1,3 +1,3 @@
 export interface OwnerProps {
-  owner: string;
+  owner: string[];
 }

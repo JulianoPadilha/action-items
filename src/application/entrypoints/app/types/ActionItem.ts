@@ -12,7 +12,7 @@ export interface ActionItem {
   creationDate: Date
   status: StatusEnum
   type: TypeEnum
-  owner: OwnerEnum
+  owner: OwnerEnum[]
   priority: PriorityEnum,
   assignmentDay: Date,
   endDay: Date

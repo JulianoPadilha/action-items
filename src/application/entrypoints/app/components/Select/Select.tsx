@@ -11,16 +11,17 @@ const sizeModifier: { [key: string]: string } = {
 
 const Select: FunctionComponent<SelectTypes> = ({ 
   items, 
-  label, 
+  label,
+  multiple = false,
   id, 
   value, 
-  size, 
-  required 
+  size,
+  required,
 }) => {
   return (
     <div>
       <label htmlFor={ id } className="block text-base text-gray-500">{ label }</label>
-      <select required={required} value={value} name={ id } id={ id } className={`border-gray-300 border rounded-md p-2 ${sizeModifier[size]}`}>
+      <select required={required} multiple={multiple} value={value} name={ id } id={ id } className={`border-gray-300 border rounded-md p-2 ${sizeModifier[size]}`}>
         <option value="">Selecionar</option>
         {Object.values(items).map(status => (
           <option key={status} value={status}>{ status }</option>
