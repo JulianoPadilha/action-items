@@ -27,10 +27,10 @@ const Button: FunctionComponent<ButtonProps> = ({
 }) => {
   let component;
   if (href) {
-    return component = <a type={type} href={href} className={`font-semibold px-10 py-3 rounded-lg mt-10 text-lg text-center ${className} ${sizeType[size]} ${modifierType[modifier]}`}>{ label }</a>
+    return component = <a type={type} href={href} className={`font-semibold py-3 rounded-lg mt-10 text-lg text-center ${className} ${sizeType[size]} ${modifierType[modifier]}`}>{ label }</a>
   }
 
-  return component = <button type={type} onClick={onClick} className={`font-semibold px-10 py-3 rounded-lg mt-10 text-lg text-center ${className} ${sizeType[size]} ${modifierType[modifier]}`}>{ label }</button>
+  return component = <button type={type} onClick={onClick} className={`font-semibold py-3 rounded-lg mt-10 text-lg text-center ${className} ${sizeType[size]} ${modifierType[modifier]}`}>{ label }</button>
 }
 
 export default Button;
