@@ -27,10 +27,10 @@ const CreateActionItem = () => {
     }
   }
 
-  const onFieldChange = (event: any) => {
+  const onFieldChange = () => {
     //@ts-ignore
     const form = document.forms.actionItem;
-    const { title, description, assignmentDay, endDay, status, priority, type, owner } = form;
+    const { title, description, assignmentDay, endDay, status, priority, type, owner, sprint } = form;
 
     const ownerList: string[] = [];
     owner.querySelectorAll('option:checked').forEach((item: any) => ownerList.push(item.value));
@@ -44,6 +44,7 @@ const CreateActionItem = () => {
       priority: priority.value,
       type: type.value,
       owner: ownerList,
+      sprint: sprint.checked
     }
     setFields(fieldsValues);
   }
@@ -91,6 +92,12 @@ const CreateActionItem = () => {
         {/* Lista de responsáveis */}
         <div className="mb-6">
           <Select multiple label="Responsável" id="owner" size="full" items={ownerList} />
+        </div>
+
+        {/* Está na Sprint? */}
+        <div className="mb-6">
+          <label htmlFor="sprint" className="text-base text-gray-500 font-bold">Está na Sprint?</label>
+          <input className="ml-2" id="sprint" type="checkbox" />
         </div>
         
         <div className="flex justify-end">

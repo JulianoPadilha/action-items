@@ -10,7 +10,8 @@ const actionItemSchema = new mongoose.Schema({
   owner: Array,
   priority: String,
   assignmentDay: String,
-  endDay: String
+  endDay: String,
+  sprint: Boolean,
 });
 
 export default mongoose.model('actionItem', actionItemSchema);

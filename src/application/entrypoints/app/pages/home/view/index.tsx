@@ -117,6 +117,8 @@ const Home = () => {
 
   const resetFilters = useCallback(async () => {
     setFilterFields({});
+    //@ts-ignore
+    document.querySelector('input[type="checkbox"]').checked = false;
     const selects = document.querySelectorAll('select');
     Array.from(selects).map(select => select.value = "");
     await filterItems();
@@ -168,6 +170,10 @@ const Home = () => {
           </div>
           <div className="mb-5">
             <Select required={false} label="Responsável" id="owner" size="full" items={ownerList} />
+          </div>
+          <div className="mb-5">
+            <label htmlFor="sprint" className="text-base text-gray-500 font-bold">Filtrar por itens na sprint?</label>
+            <input className="ml-2" id="sprint" type="checkbox" value="true" />
           </div>
           
           <div>

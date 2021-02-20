@@ -14,7 +14,8 @@ const actionItemTypeMock: ActionItem = {
   owner: OwnerEnum.JUJU,
   priority: PriorityEnum.HIGH,
   assignmentDay: new Date("2021-02-04 12:00:00 GMT-0"),
-  endDay: new Date("2021-02-10 12:00:00 GMT-0")
+  endDay: new Date("2021-02-10 12:00:00 GMT-0"),
+  sprint: false,
 }
 
 describe('ActionItem Entity', () => {
@@ -34,7 +35,8 @@ describe('ActionItem Entity', () => {
       owner: OwnerEnum.JUJU,
       priority: PriorityEnum.HIGH,
       assignmentDay: new Date("2021-02-04 12:00:00 GMT-0"),
-      endDay: new Date("2021-02-10 12:00:00 GMT-0")
+      endDay: new Date("2021-02-10 12:00:00 GMT-0"),
+      sprint: false,
     };
 
     Object.keys(actionItemTypeMockFail).forEach(() => {

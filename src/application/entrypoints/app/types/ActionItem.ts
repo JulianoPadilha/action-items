@@ -13,7 +13,8 @@ export interface ActionItem {
   status: StatusEnum
   type: TypeEnum
   owner: OwnerEnum[]
-  priority: PriorityEnum,
-  assignmentDay: Date,
+  priority: PriorityEnum
+  assignmentDay: Date
   endDay: Date
+  sprint: boolean
 };
