@@ -1,9 +1,6 @@
 /* Dependencies */
 import React, { useCallback, useEffect, useState } from 'react';
 
-/* Types */
-import { ActionItem } from '../../../types/ActionItem';
-
 /* Utils */
 import { statusList } from '../../../utils/statusList';
 import { ownerList } from '../../../utils/ownerList';
@@ -73,12 +70,12 @@ const Home = () => {
     setModalDeleteOpen({ isModalOpen: true, item });
   }
   
-  const deleteActionItem = async (itemId: string) => {
+  const deleteActionItem = useCallback(async (itemId: string) => {
     const response = await deleteActionItemById(itemId);
     if (response) {
       window.location.reload();
     }
-  }
+  }, []);
 
   const openFilter = () => {
     setOpenFilter(true);
@@ -150,6 +147,8 @@ const Home = () => {
           item={modalDeleteOpenData.item}
         />
       }
+
+      {/* Filter component */}
       <div className={`bg-gray-100 h-screen absolute top-0 shadow-2xl ${isFilterOpen ? 'opacity-1 right-0 transition-opacity ease-in-out duration-300 w-80' : 'opacity-0 w-0'}`}>
         <div className="flex justify-between mb-2 p-5 bg-gray-200 shadow-md">
           <h2 className="text-xl text-gray-700">Filtrar por:</h2>
